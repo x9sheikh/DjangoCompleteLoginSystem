@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block login %}
+    {% if user.is_authenticated %}
+        <li><a href= "{% url 'logout' %}"><button class="btn btn-success">Logout</button></a></li>
+    {% else %}
+
+        <li><a href= "{% url 'login' %}"><button class="btn btn-success">SignUp/Login</button></a></li>
+
+    {% endif %}
+{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        Welcome <b>{{user.username}}</b>
+    {% else %}
+    {% endif %}
+{% endblock %}
